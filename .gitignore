@@ -1,0 +1,5 @@
+__pycache__
+.vscode
+audios/__pycache__
+audios/*.mp3
+!audios/cria_audios.py
