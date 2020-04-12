@@ -5,11 +5,11 @@
 
 // VARIÁVEIS WIFI
 
-const char* ssid = "Castro1";
-const char* password = "daniale21";
+const char* ssid = "SSID";
+const char* password = "SENHA";
 
 //VARIÁVEIS MQTT
-const char* mqtt_server = "192.168.0.16";
+const char* mqtt_server = "MQTT_broker";
 const char* mqtt_clientID = "sonoff";
 const char* topico = "cleusa/iluminacao";
 

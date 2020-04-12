@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Autor: Fábio Berbert de Paula <fberbert@gmail.com>
 Data : 27/11/2018
