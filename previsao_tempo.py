@@ -53,11 +53,11 @@ def previsao(local=''):
 
 
 if __name__ == '__main__':
-#leitura da localidade (parâmetro via linha de comando)
+    # leitura da localidade (parâmetro via linha de comando)
     import sys
-    local=''
-    if len(sys.argv)>0:
+    local = ''
+    if len(sys.argv) > 0:
         sys.argv.pop(0)
         local = ' '.join(sys.argv)
 
-    print(previsao(local))
+    print(previsao())

@@ -15,4 +15,4 @@ def corona_virus():
 
 
 if __name__ == '__main__':
-    corona_virus()
+    print(corona_virus())

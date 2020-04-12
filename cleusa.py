@@ -3,7 +3,8 @@ from subprocess import call
 from corona import corona_virus
 from audios.cria_audios import cria_audio
 from previsao_tempo import previsao
-import os
+from controla_luz import controla_luz
+
 
 NOME = 'Cleusa'
 
@@ -13,9 +14,11 @@ trigger = NOME.lower()
 def monitora_microfone():
     # obtain audio from the microphone
     microfone = sr.Recognizer()
-    
+    # microfone.energy_threshold = 10000
+    # microfone.dynamic_energy_threshold = True
     with sr.Microphone() as source:
-        microfone.energy_threshold = 90000
+        microfone.energy_threshold = 3000
+        # microfone.pause_threshold = 1
         microfone.adjust_for_ambient_noise(source)
         print(microfone.energy_threshold)
         print("Aguardando Comando")
@@ -25,6 +28,7 @@ def monitora_microfone():
     try:
         entrada = microfone.recognize_google(audio, language='pt-BR')
         entrada = entrada.lower()
+        print(entrada)
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
@@ -34,7 +38,7 @@ def monitora_microfone():
     else:
         if trigger in entrada:
             print('Comando:', entrada.replace(trigger, ''))
-            cria_audio(entrada.replace(trigger, ''), 'entrada')
+            # cria_audio(entrada.replace(trigger, ''), 'entrada')
             # responde()
             executa_comandos(entrada)
 
@@ -67,6 +71,12 @@ def executa_comandos(comando: str) -> None:
         """
         cria_audio(fala, 'dormir')
         exit()
+
+    if 'luz' in comando:
+        controla_luz(0)
+        fala = "Luz acesa"
+        cria_audio(fala, 'luz')
+        controla_luz(0)
 
 
 def main():

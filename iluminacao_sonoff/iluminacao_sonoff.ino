@@ -5,13 +5,13 @@
 
 // VARIÁVEIS WIFI
 
-const char* ssid = "pdu_express";
-const char* password = "07343957";
+const char* ssid = "Castro1";
+const char* password = "daniale21";
 
 //VARIÁVEIS MQTT
-const char* mqtt_server = "192.168.43.140";
+const char* mqtt_server = "192.168.0.16";
 const char* mqtt_clientID = "sonoff";
-const char* topico = "pduexpress/iluminacao";
+const char* topico = "cleusa/iluminacao";
 
 //Cria instâncias WIFI e MQTT
 WiFiClient espClient;
@@ -67,6 +67,7 @@ void loop() {
 
   if (!client.connected()) {
     conectaMQTT();
+    digitalWrite(12, HIGH);
   }
   client.loop();
 
