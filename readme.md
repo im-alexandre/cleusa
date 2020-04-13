@@ -1,9 +1,11 @@
 ## Criando novo ambiente ##
 
-<code>$ conda create --name jarvis pip
- \$ conda activate jarvis
+<code>$ conda create --name cleusa pip  
+ 
+ $ conda activate cleusa</code>
 
- \# Erro instalando o pyaudio
- \$ sudo apt-get install portaudio19-dev python-pyaudio</code>
+#Erro instalando o pyaudio
+
+<code>$ sudo apt-get install portaudio19-dev python-pyaudio</code>
 
  
