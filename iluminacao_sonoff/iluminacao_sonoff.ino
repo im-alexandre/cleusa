@@ -13,6 +13,9 @@ const char* mqtt_server = "MQTT_BROKER";
 const char* mqtt_clientID = "sonoff";
 const char* topico = "cleusa/iluminacao";
 
+String LED_PIN = 14
+String RELAY_PIN = 12
+
 //Cria instâncias WIFI e MQTT
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -41,9 +44,9 @@ void setup_wifi() {
 void monitoraTopico (char* topico, byte* payload, unsigned int length){
 
   if ((char)payload[0] == '1'){
-    digitalWrite(12, LOW);
+    digitalWrite(RELAY_PIN, LOW);
   }else if ((char)payload[0] == '0'){
-    digitalWrite(12, HIGH);
+    digitalWrite(RELAY_PIN, HIGH);
   }
 }
 
@@ -57,8 +60,8 @@ void conectaMQTT() {
 
 void setup() {
   Serial.begin(115200);
-  pinMode(12, OUTPUT);
-  digitalWrite(12, HIGH);
+  pinMode(RELAY_PIN, OUTPUT);
+  digitalWrite(RELAY_PIN, HIGH);
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   client.setCallback(monitoraTopico); //Chama a função monitora tópico no client.loop
@@ -68,7 +71,7 @@ void loop() {
 
   if (!client.connected()) {
     conectaMQTT();
-    digitalWrite(12, HIGH);
+    digitalWrite(RELAY_PIN, HIGH);
   }
   client.loop();
 
