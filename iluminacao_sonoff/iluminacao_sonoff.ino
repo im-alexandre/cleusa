@@ -9,7 +9,7 @@ const char* ssid = "SSID";
 const char* password = "SENHA";
 
 //VARIÁVEIS MQTT
-const char* mqtt_server = "MQTT_broker";
+const char* mqtt_server = "MQTT_BROKER";
 const char* mqtt_clientID = "sonoff";
 const char* topico = "cleusa/iluminacao";
 
@@ -52,12 +52,13 @@ void conectaMQTT() {
     client.connect(mqtt_clientID);
   }
   client.subscribe(topico);
-//  Serial.println("conectado ao broker");
+  Serial.println("conectado ao broker");
 }
 
 void setup() {
   Serial.begin(115200);
   pinMode(12, OUTPUT);
+  digitalWrite(12, HIGH);
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   client.setCallback(monitoraTopico); //Chama a função monitora tópico no client.loop
