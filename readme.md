@@ -1,10 +1,14 @@
 # C.L.E.U.S.A
 
-*C*omputered 
-*L*ogical 
-*E*nhanced 
-*U*ltra-*S*mart 
-*A*lgorythm
+**C**omputered
+
+**L**ogical 
+
+**E**nhanced 
+
+**U**ltra-**S**mart 
+
+**A**lgorythm
 
 
 ## Criando novo ambiente ##
