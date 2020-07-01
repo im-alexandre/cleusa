@@ -1,4 +1,11 @@
-# computered logical enhanced ultra-smart algorythm - CLEUSA
+# C.L.E.U.S.A
+
+*C*omputered 
+*L*ogical 
+*E*nhanced 
+*U*ltra-*S*mart 
+*A*lgorythm
+
 
 ## Criando novo ambiente ##
 
