@@ -1,3 +1,5 @@
+# computered logical enhanced ultra-smart algorythm - CLEUSA
+
 ## Criando novo ambiente ##
 
 <code>$ conda create --name cleusa pip  
